@@ -1,0 +1,32 @@
+[{
+	"WAERS": "EUR",
+	"KTEXT": "European Euro"
+},
+{
+	"WAERS": "USD",
+	"KTEXT": "United States Dollar"
+},
+{
+	"WAERS": "GBP",
+	"KTEXT": "British Pound"
+},
+{
+	"WAERS": "DKK",
+	"KTEXT": "Danish Krone"
+},
+{
+	"WAERS": "INR",
+	"KTEXT": "Indian Rupee"
+},
+{
+	"WAERS": "NOK",
+	"KTEXT": "Norwegian Krone"
+},
+{
+	"WAERS": "SEK",
+	"KTEXT": "Swedish Krona"
+},
+{
+	"WAERS": "CHF",
+	"KTEXT": "Swiss Franc"
+}]
