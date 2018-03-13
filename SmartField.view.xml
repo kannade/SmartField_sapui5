@@ -1,0 +1,283 @@
+<core:View xmlns:core="sap.ui.core"
+	xmlns:smartField="sap.ui.comp.smartfield"
+	xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+	controllerName="sap.ui.comp.sample.smartfield.SmartField" class="sapUiSizeCompact"
+	xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form"
+	xmlns:m="sap.m">
+	<m:ToggleButton id="idToggleEdit" pressed="true" text="Перейти в / закрыть режим редактирования" icon="sap-icon://edit" press="onChangeEditMode" />
+	<f:Form class="editableForm" editable="true">
+		<f:layout>
+			<f:ResponsiveGridLayout/>
+		</f:layout>
+
+		<f:FormContainer>
+
+			<!-- *********************************** -->
+			<!-- Демонстрация sap:updatable="false" -->
+			<!-- *********************************** -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idProductId" />
+				</f:label>
+				<smartField:SmartField value="{ProductId}" id="idProductId" />
+			</f:FormElement>
+
+			<!-- ************************************ -->
+			<!-- Демонстрация ссылки                  -->
+			<!-- Note: Only visible in read-only mode -->
+			<!-- ************************************ -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idName" />
+				</f:label>
+				<smartField:SmartField value="{Name}" id="idName" url="http://www.sap.com"/>
+			</f:FormElement>
+
+			<!-- ************************************ -->
+			<!-- Пример e-mail                        -->
+			<!-- ************************************ -->
+
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idEmail"/>
+				</f:label>
+				<smartField:SmartField id="idEmail" value="{Email}"/>
+			</f:FormElement>
+
+			<!-- ************************************ -->
+			<!-- Пример номера телефона               -->
+			<!-- ************************************ -->
+
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idPhone"/>
+				</f:label>
+				<smartField:SmartField id="idPhone" value="{Phone}"/>
+			</f:FormElement>
+
+			<!-- ************************************ -->
+			<!-- Пример ссылки                        -->
+			<!-- ************************************ -->
+
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idURL"/>
+				</f:label>
+				<smartField:SmartField id="idURL" value="{URL}"/>
+			</f:FormElement>
+
+			<!-- ****************************************************** -->
+			<!-- Пример com.sap.vocabularies.Common.v1.ValueList        -->
+			<!-- и  sap:value-list="fixed-values"                       -->
+			<!-- ****************************************************** -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idCategory" />
+				</f:label>
+				<smartField:SmartField value="{Category}" id="idCategory" >
+				</smartField:SmartField>
+			</f:FormElement>
+
+			<!-- ****************************************************** -->
+			<!-- Пример com.sap.vocabularies.UI.v1.MultiLineText        -->
+			<!-- ****************************************************** -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idDescription" />
+				</f:label>
+				<smartField:SmartField value="{Description}" id="idDescription"
+					app:multiLineSettings="{cols: 50, rows: 4}" />
+			</f:FormElement>
+
+			<!-- ******************************************************** -->
+			<!-- Пример sap:unit и sap:semantics="currency-code"          -->
+			<!-- ******************************************************** -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idPrice" />
+				</f:label>
+				<smartField:SmartField value="{Price}" id="idPrice"/>
+			</f:FormElement>
+
+			<!-- ************************** -->
+			<!-- Пример ObjectNumber        -->
+			<!-- ************************** -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idPriceObjectNumber" />
+				</f:label>
+				<smartField:SmartField value="{Price}" id="idPriceObjectNumber"
+					contextEditable="false">
+					<smartField:controlProposal>
+						<smartField:ControlProposal controlType="ObjectNumber">
+						</smartField:ControlProposal>
+					</smartField:controlProposal>
+				</smartField:SmartField>
+			</f:FormElement>
+
+			<!-- ******************************************************** -->
+			<!-- Демонстрация различных режимов отображения Edm.Boolean   -->
+			<!-- ******************************************************** -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idSale" />
+				</f:label>
+				<smartField:SmartField value="{Sale}" id="idSale">
+					<smartField:layoutData>
+						<l:GridData  spanL="2" spanM="2" spanS="2"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+
+				<smartField:SmartField value="{Sale}" id="idSaleDisplay" contextEditable="false">
+					<smartField:layoutData>
+						<l:GridData  spanL="2" spanM="2" spanS="2"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+
+				<smartField:SmartField value="{Sale}" id="idSaleDisplayOnOff" contextEditable="false" >
+					<smartField:configuration>
+						<smartField:Configuration displayBehaviour="OnOff"/>
+					</smartField:configuration>
+					<smartField:layoutData>
+						<l:GridData  spanL="2" spanM="2" spanS="2"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+
+				<smartField:SmartField value="{Sale}" id="idSaleDisplayTrueFalse"
+					contextEditable="false">
+					<smartField:configuration>
+						<smartField:Configuration displayBehaviour="TrueFalse"/>
+					</smartField:configuration>
+					<smartField:layoutData>
+						<l:GridData  spanL="2" spanM="2" spanS="2"/>
+					</smartField:layoutData>
+				</smartField:SmartField>
+			</f:FormElement>
+
+			<!-- ************************************ -->
+			<!-- Пример ObjectStatus с иконкой        -->
+			<!-- ************************************ -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idStatus" />
+				</f:label>
+				<smartField:SmartField value="{Status}" id="idStatus">
+					<smartField:controlProposal>
+						<smartField:ControlProposal>
+							<smartField:objectStatus>
+								<smartField:ObjectStatus criticality="{StatusValueState}">
+								</smartField:ObjectStatus>
+							</smartField:objectStatus>
+						</smartField:ControlProposal>
+					</smartField:controlProposal>
+				</smartField:SmartField>
+			</f:FormElement>
+
+			<!-- *************************************** -->
+			<!-- Пример ObjectStatus без иконки          -->
+			<!-- *************************************** -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idStatusNoIcon" />
+				</f:label>
+				<smartField:SmartField value="{Status}" id="idStatusNoIcon">
+					<smartField:controlProposal>
+						<smartField:ControlProposal>
+							<smartField:objectStatus>
+								<smartField:ObjectStatus criticality="{StatusValueState}"
+									criticalityRepresentationType="WithoutIcon">
+								</smartField:ObjectStatus>
+							</smartField:objectStatus>
+						</smartField:ControlProposal>
+					</smartField:controlProposal>
+				</smartField:SmartField>
+			</f:FormElement>
+
+			<!-- ********************************************** -->
+			<!-- Пример средств измерений                       -->
+			<!-- (sap-unit и sap:semantics="unit-of-measure")   -->
+			<!-- ********************************************** -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idQuantity" />
+				</f:label>
+				<smartField:SmartField value="{Quantity}" id="idQuantity"/>
+			</f:FormElement>
+
+			<!-- *************************************************************** -->
+			<!-- Пример поля ввода пароля (com.sap.vocabularies.Common.v1.Masked)-->
+			<!-- *************************************************************** -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idPassword" />
+				</f:label>
+				<smartField:SmartField value="{Password}" id="idPassword"/>
+			</f:FormElement>
+
+			<!-- ************************************************ -->
+			<!-- Дата (Edm.DateTime и sap:display-format="Date" -->
+			<!-- ************************************************ -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idCreationDate" />
+				</f:label>
+				<smartField:SmartField value="{CreationDate}" id="idCreationDate"/>
+			</f:FormElement>
+
+			<!-- ***************************************** -->
+			<!-- Дата с dateFormatSettings используя style -->
+			<!-- см. sap.ui.core.format.DateFormat         -->
+			<!-- oFormatOptions.style                      -->
+			<!-- ***************************************** -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idCreationDateLong" />
+				</f:label>
+				<smartField:SmartField value="{CreationDate}" id="idCreationDateLong">
+					<smartField:customData>
+						<core:CustomData key="dateFormatSettings" value='\{"style":"long"\}' />
+					</smartField:customData>
+				</smartField:SmartField>
+			</f:FormElement>
+
+			<!-- **************************************************** -->
+			<!-- Дата с dateFormatSettings используя шаблон (pattern) -->
+			<!-- see sap.ui.core.format.DateFormat                    -->
+			<!-- oFormatOptions.pattern                               -->
+			<!-- **************************************************** -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idCreationDateCustomPattern" />
+				</f:label>
+				<smartField:SmartField value="{CreationDate}" id="idCreationDateCustomPattern">
+					<smartField:customData>
+						<core:CustomData key="dateFormatSettings" value='\{"pattern":"yyyy-MM-dd"\}' />
+					</smartField:customData>
+				</smartField:SmartField>
+			</f:FormElement>
+
+			<!-- ************ -->
+			<!-- Edm.DateTime -->
+			<!-- ************ -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idLastChanged" />
+				</f:label>
+				<smartField:SmartField value="{LastChanged}" id="idLastChanged"/>
+			</f:FormElement>
+
+			<!-- ****************** -->
+			<!-- Edm.DateTimeOffset -->
+			<!-- ****************** -->
+			<f:FormElement>
+				<f:label>
+					<smartField:SmartLabel labelFor="idAvailableSince" />
+				</f:label>
+				<smartField:SmartField value="{AvailableSince}" id="idAvailableSince"/>
+			</f:FormElement>
+		</f:FormContainer>
+	</f:Form>
+
+</core:View>
