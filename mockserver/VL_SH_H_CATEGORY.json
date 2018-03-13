@@ -1,0 +1,32 @@
+[{
+	"CATC": "EUR",
+	"LTXT": "European Euro"
+},
+{
+	"CATC": "USD",
+	"LTXT": "United States Dollar"
+},
+{
+	"CATC": "GBP",
+	"LTXT": "British Pound"
+},
+{
+	"CATC": "DKK",
+	"LTXT": "Danish Krone"
+},
+{
+	"CATC": "INR",
+	"LTXT": "Indian Rupee"
+},
+{
+	"CATC": "NOK",
+	"LTXT": "Norwegian Krone"
+},
+{
+	"CATC": "SEK",
+	"LTXT": "Swedish Krona"
+},
+{
+	"CATC": "CHF",
+	"LTXT": "Swiss Franc"
+}]
